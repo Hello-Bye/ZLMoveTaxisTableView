@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9DA2C4391ED58B7000115004 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2C4381ED58B7000115004 /* main.m */; };
+		9DA2C43C1ED58B7000115004 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2C43B1ED58B7000115004 /* AppDelegate.m */; };
+		9DA2C43F1ED58B7000115004 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2C43E1ED58B7000115004 /* ViewController.m */; };
+		9DA2C4421ED58B7000115004 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2C4401ED58B7000115004 /* Main.storyboard */; };
+		9DA2C4441ED58B7000115004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2C4431ED58B7000115004 /* Assets.xcassets */; };
+		9DA2C4471ED58B7000115004 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2C4451ED58B7000115004 /* LaunchScreen.storyboard */; };
+		9DA2C4521ED58B7000115004 /* ZLMoveTaxisTableViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2C4511ED58B7000115004 /* ZLMoveTaxisTableViewDemoTests.m */; };
+		9DA2C45D1ED58B7000115004 /* ZLMoveTaxisTableViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2C45C1ED58B7000115004 /* ZLMoveTaxisTableViewDemoUITests.m */; };
+		9DA2C46E1ED58CC700115004 /* ZLMoveTaxisTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2C46D1ED58CC700115004 /* ZLMoveTaxisTableView.m */; };
+		9DA2C4741ED594CC00115004 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2C4731ED594CC00115004 /* Model.m */; };
+		9DA2C4771ED59E8200115004 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2C4761ED59E8200115004 /* UIView+Additions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9DA2C44E1ED58B7000115004 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DA2C42C1ED58B7000115004 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DA2C4331ED58B7000115004;
+			remoteInfo = ZLMoveTaxisTableViewDemo;
+		};
+		9DA2C4591ED58B7000115004 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DA2C42C1ED58B7000115004 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DA2C4331ED58B7000115004;
+			remoteInfo = ZLMoveTaxisTableViewDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9DA2C4341ED58B7000115004 /* ZLMoveTaxisTableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLMoveTaxisTableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DA2C4381ED58B7000115004 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9DA2C43A1ED58B7000115004 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9DA2C43B1ED58B7000115004 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9DA2C43D1ED58B7000115004 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9DA2C43E1ED58B7000115004 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9DA2C4411ED58B7000115004 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9DA2C4431ED58B7000115004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9DA2C4461ED58B7000115004 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9DA2C4481ED58B7000115004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DA2C44D1ED58B7000115004 /* ZLMoveTaxisTableViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZLMoveTaxisTableViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DA2C4511ED58B7000115004 /* ZLMoveTaxisTableViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLMoveTaxisTableViewDemoTests.m; sourceTree = "<group>"; };
+		9DA2C4531ED58B7000115004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DA2C4581ED58B7000115004 /* ZLMoveTaxisTableViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZLMoveTaxisTableViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DA2C45C1ED58B7000115004 /* ZLMoveTaxisTableViewDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLMoveTaxisTableViewDemoUITests.m; sourceTree = "<group>"; };
+		9DA2C45E1ED58B7000115004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DA2C46C1ED58CC700115004 /* ZLMoveTaxisTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLMoveTaxisTableView.h; sourceTree = "<group>"; };
+		9DA2C46D1ED58CC700115004 /* ZLMoveTaxisTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLMoveTaxisTableView.m; sourceTree = "<group>"; };
+		9DA2C4721ED594CC00115004 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		9DA2C4731ED594CC00115004 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		9DA2C4751ED59E8200115004 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
+		9DA2C4761ED59E8200115004 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9DA2C4311ED58B7000115004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DA2C44A1ED58B7000115004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DA2C4551ED58B7000115004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9DA2C42B1ED58B7000115004 = {
+			isa = PBXGroup;
+			children = (
+				9DA2C4361ED58B7000115004 /* ZLMoveTaxisTableViewDemo */,
+				9DA2C4501ED58B7000115004 /* ZLMoveTaxisTableViewDemoTests */,
+				9DA2C45B1ED58B7000115004 /* ZLMoveTaxisTableViewDemoUITests */,
+				9DA2C4351ED58B7000115004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9DA2C4351ED58B7000115004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DA2C4341ED58B7000115004 /* ZLMoveTaxisTableViewDemo.app */,
+				9DA2C44D1ED58B7000115004 /* ZLMoveTaxisTableViewDemoTests.xctest */,
+				9DA2C4581ED58B7000115004 /* ZLMoveTaxisTableViewDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9DA2C4361ED58B7000115004 /* ZLMoveTaxisTableViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				9DA2C46B1ED58C4F00115004 /* ZLMoveTaxisTableView */,
+				9DA2C43A1ED58B7000115004 /* AppDelegate.h */,
+				9DA2C43B1ED58B7000115004 /* AppDelegate.m */,
+				9DA2C43D1ED58B7000115004 /* ViewController.h */,
+				9DA2C43E1ED58B7000115004 /* ViewController.m */,
+				9DA2C4721ED594CC00115004 /* Model.h */,
+				9DA2C4731ED594CC00115004 /* Model.m */,
+				9DA2C4401ED58B7000115004 /* Main.storyboard */,
+				9DA2C4431ED58B7000115004 /* Assets.xcassets */,
+				9DA2C4451ED58B7000115004 /* LaunchScreen.storyboard */,
+				9DA2C4481ED58B7000115004 /* Info.plist */,
+				9DA2C4371ED58B7000115004 /* Supporting Files */,
+			);
+			path = ZLMoveTaxisTableViewDemo;
+			sourceTree = "<group>";
+		};
+		9DA2C4371ED58B7000115004 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9DA2C4381ED58B7000115004 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9DA2C4501ED58B7000115004 /* ZLMoveTaxisTableViewDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				9DA2C4511ED58B7000115004 /* ZLMoveTaxisTableViewDemoTests.m */,
+				9DA2C4531ED58B7000115004 /* Info.plist */,
+			);
+			path = ZLMoveTaxisTableViewDemoTests;
+			sourceTree = "<group>";
+		};
+		9DA2C45B1ED58B7000115004 /* ZLMoveTaxisTableViewDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9DA2C45C1ED58B7000115004 /* ZLMoveTaxisTableViewDemoUITests.m */,
+				9DA2C45E1ED58B7000115004 /* Info.plist */,
+			);
+			path = ZLMoveTaxisTableViewDemoUITests;
+			sourceTree = "<group>";
+		};
+		9DA2C46B1ED58C4F00115004 /* ZLMoveTaxisTableView */ = {
+			isa = PBXGroup;
+			children = (
+				9DA2C46C1ED58CC700115004 /* ZLMoveTaxisTableView.h */,
+				9DA2C46D1ED58CC700115004 /* ZLMoveTaxisTableView.m */,
+				9DA2C4751ED59E8200115004 /* UIView+Additions.h */,
+				9DA2C4761ED59E8200115004 /* UIView+Additions.m */,
+			);
+			name = ZLMoveTaxisTableView;
+			path = ../../ZLMoveTaxisTableView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9DA2C4331ED58B7000115004 /* ZLMoveTaxisTableViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DA2C4611ED58B7000115004 /* Build configuration list for PBXNativeTarget "ZLMoveTaxisTableViewDemo" */;
+			buildPhases = (
+				9DA2C4301ED58B7000115004 /* Sources */,
+				9DA2C4311ED58B7000115004 /* Frameworks */,
+				9DA2C4321ED58B7000115004 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZLMoveTaxisTableViewDemo;
+			productName = ZLMoveTaxisTableViewDemo;
+			productReference = 9DA2C4341ED58B7000115004 /* ZLMoveTaxisTableViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9DA2C44C1ED58B7000115004 /* ZLMoveTaxisTableViewDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DA2C4641ED58B7100115004 /* Build configuration list for PBXNativeTarget "ZLMoveTaxisTableViewDemoTests" */;
+			buildPhases = (
+				9DA2C4491ED58B7000115004 /* Sources */,
+				9DA2C44A1ED58B7000115004 /* Frameworks */,
+				9DA2C44B1ED58B7000115004 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DA2C44F1ED58B7000115004 /* PBXTargetDependency */,
+			);
+			name = ZLMoveTaxisTableViewDemoTests;
+			productName = ZLMoveTaxisTableViewDemoTests;
+			productReference = 9DA2C44D1ED58B7000115004 /* ZLMoveTaxisTableViewDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9DA2C4571ED58B7000115004 /* ZLMoveTaxisTableViewDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DA2C4671ED58B7100115004 /* Build configuration list for PBXNativeTarget "ZLMoveTaxisTableViewDemoUITests" */;
+			buildPhases = (
+				9DA2C4541ED58B7000115004 /* Sources */,
+				9DA2C4551ED58B7000115004 /* Frameworks */,
+				9DA2C4561ED58B7000115004 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DA2C45A1ED58B7000115004 /* PBXTargetDependency */,
+			);
+			name = ZLMoveTaxisTableViewDemoUITests;
+			productName = ZLMoveTaxisTableViewDemoUITests;
+			productReference = 9DA2C4581ED58B7000115004 /* ZLMoveTaxisTableViewDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9DA2C42C1ED58B7000115004 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = personal;
+				TargetAttributes = {
+					9DA2C4331ED58B7000115004 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 7M6Q2QL83U;
+						ProvisioningStyle = Automatic;
+					};
+					9DA2C44C1ED58B7000115004 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 7M6Q2QL83U;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9DA2C4331ED58B7000115004;
+					};
+					9DA2C4571ED58B7000115004 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 7M6Q2QL83U;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9DA2C4331ED58B7000115004;
+					};
+				};
+			};
+			buildConfigurationList = 9DA2C42F1ED58B7000115004 /* Build configuration list for PBXProject "ZLMoveTaxisTableViewDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9DA2C42B1ED58B7000115004;
+			productRefGroup = 9DA2C4351ED58B7000115004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9DA2C4331ED58B7000115004 /* ZLMoveTaxisTableViewDemo */,
+				9DA2C44C1ED58B7000115004 /* ZLMoveTaxisTableViewDemoTests */,
+				9DA2C4571ED58B7000115004 /* ZLMoveTaxisTableViewDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9DA2C4321ED58B7000115004 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DA2C4471ED58B7000115004 /* LaunchScreen.storyboard in Resources */,
+				9DA2C4441ED58B7000115004 /* Assets.xcassets in Resources */,
+				9DA2C4421ED58B7000115004 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DA2C44B1ED58B7000115004 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DA2C4561ED58B7000115004 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9DA2C4301ED58B7000115004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DA2C4771ED59E8200115004 /* UIView+Additions.m in Sources */,
+				9DA2C43F1ED58B7000115004 /* ViewController.m in Sources */,
+				9DA2C43C1ED58B7000115004 /* AppDelegate.m in Sources */,
+				9DA2C46E1ED58CC700115004 /* ZLMoveTaxisTableView.m in Sources */,
+				9DA2C4391ED58B7000115004 /* main.m in Sources */,
+				9DA2C4741ED594CC00115004 /* Model.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DA2C4491ED58B7000115004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DA2C4521ED58B7000115004 /* ZLMoveTaxisTableViewDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DA2C4541ED58B7000115004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DA2C45D1ED58B7000115004 /* ZLMoveTaxisTableViewDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9DA2C44F1ED58B7000115004 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DA2C4331ED58B7000115004 /* ZLMoveTaxisTableViewDemo */;
+			targetProxy = 9DA2C44E1ED58B7000115004 /* PBXContainerItemProxy */;
+		};
+		9DA2C45A1ED58B7000115004 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DA2C4331ED58B7000115004 /* ZLMoveTaxisTableViewDemo */;
+			targetProxy = 9DA2C4591ED58B7000115004 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9DA2C4401ED58B7000115004 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DA2C4411ED58B7000115004 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9DA2C4451ED58B7000115004 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DA2C4461ED58B7000115004 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9DA2C45F1ED58B7000115004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9DA2C4601ED58B7000115004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9DA2C4621ED58B7000115004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7M6Q2QL83U;
+				INFOPLIST_FILE = ZLMoveTaxisTableViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.ZLMoveTaxisTableViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9DA2C4631ED58B7000115004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7M6Q2QL83U;
+				INFOPLIST_FILE = ZLMoveTaxisTableViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.ZLMoveTaxisTableViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9DA2C4651ED58B7100115004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7M6Q2QL83U;
+				INFOPLIST_FILE = ZLMoveTaxisTableViewDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.ZLMoveTaxisTableViewDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZLMoveTaxisTableViewDemo.app/ZLMoveTaxisTableViewDemo";
+			};
+			name = Debug;
+		};
+		9DA2C4661ED58B7100115004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7M6Q2QL83U;
+				INFOPLIST_FILE = ZLMoveTaxisTableViewDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.ZLMoveTaxisTableViewDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZLMoveTaxisTableViewDemo.app/ZLMoveTaxisTableViewDemo";
+			};
+			name = Release;
+		};
+		9DA2C4681ED58B7100115004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 7M6Q2QL83U;
+				INFOPLIST_FILE = ZLMoveTaxisTableViewDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.ZLMoveTaxisTableViewDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZLMoveTaxisTableViewDemo;
+			};
+			name = Debug;
+		};
+		9DA2C4691ED58B7100115004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 7M6Q2QL83U;
+				INFOPLIST_FILE = ZLMoveTaxisTableViewDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.ZLMoveTaxisTableViewDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZLMoveTaxisTableViewDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9DA2C42F1ED58B7000115004 /* Build configuration list for PBXProject "ZLMoveTaxisTableViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DA2C45F1ED58B7000115004 /* Debug */,
+				9DA2C4601ED58B7000115004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DA2C4611ED58B7000115004 /* Build configuration list for PBXNativeTarget "ZLMoveTaxisTableViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DA2C4621ED58B7000115004 /* Debug */,
+				9DA2C4631ED58B7000115004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9DA2C4641ED58B7100115004 /* Build configuration list for PBXNativeTarget "ZLMoveTaxisTableViewDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DA2C4651ED58B7100115004 /* Debug */,
+				9DA2C4661ED58B7100115004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9DA2C4671ED58B7100115004 /* Build configuration list for PBXNativeTarget "ZLMoveTaxisTableViewDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DA2C4681ED58B7100115004 /* Debug */,
+				9DA2C4691ED58B7100115004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9DA2C42C1ED58B7000115004 /* Project object */;
+}
