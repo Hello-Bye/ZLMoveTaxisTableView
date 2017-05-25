@@ -10,19 +10,25 @@
 @class ZLMoveTaxisTableView;
 
 @protocol ZLMoveTaxisTableViewDataSource <UITableViewDataSource>
-
 @required
-- (NSMutableArray *)dataSourceInTableView:(ZLMoveTaxisTableView *)tableView;
+/// 返回数据源
+- (NSArray *)dataSourceInTableView:(ZLMoveTaxisTableView *)tableView;
 
+/// 交换后的数据源，需要保存新的数据源
+- (void)tableView:(ZLMoveTaxisTableView *)tableView newDataSource:(NSArray *)newDataSource;
 @end
 
 @protocol ZLMoveTaxisTableViewDelegate <UITableViewDelegate>
 
-/// 当多组的时候，如果每一组不是一个NSMutableArray时（如：自定义组模型），需要代理手动交换数据源并移动cell, 并且需要返回交换之后的数据源
-- (NSMutableArray *)tableView:(ZLMoveTaxisTableView *)tableview willChangeDataSource:(NSMutableArray *)dataSource source:(NSIndexPath *)source destination:(NSIndexPath *)destination;
+@optional
+/// 将要开始移动cell
+- (void)tableView:(ZLMoveTaxisTableView *)tableView beginMoveCellAtIndexPath:(NSIndexPath *)indexPath;
 
-/// 每次交换完数据源后都要通知代理
-- (void)tableView:(ZLMoveTaxisTableView *)tableview didChangeDataSource:(NSMutableArray *)dataSource;
+/// 每次移动一次cell都会调用
+- (void)tableView:(ZLMoveTaxisTableView *)tableView didMoveCellNewIndexPath:(NSIndexPath *)newIndexPath oldIndexPath:(NSIndexPath *)oldIndexPath;
+
+/// 结束移动cell
+- (void)tableView:(ZLMoveTaxisTableView *)tableview endMoveCellAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @interface ZLMoveTaxisTableView : UITableView

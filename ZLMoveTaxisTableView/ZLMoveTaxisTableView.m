@@ -55,16 +55,38 @@
         [self longPressBegan:point];
     } else if (longPress.state == UIGestureRecognizerStateChanged) {
         [self longPressChanged:point];
-    } else if (longPress.state == UIGestureRecognizerStateEnded) {
+    } else if (longPress.state == UIGestureRecognizerStateEnded ||
+               longPress.state == UIGestureRecognizerStateCancelled) {
         [self longPressEnd:point];
     }
 }
 
 - (void)longPressBegan:(CGPoint)point {
     NSIndexPath *indexPath = [self indexPathForRowAtPoint:point];
-    NSLog(@"长按手势开始 - %ld", indexPath.row);
     // 记录选中的cell的index
     self.selectedCellIndexPath = indexPath;
+    
+    // 将要开始移动，获取数据源
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(dataSourceInTableView:)]) {
+        self.datas = [self.dataSource dataSourceInTableView:self].mutableCopy;
+    }
+    
+    // 通知代理，将要开始移动
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:beginMoveCellAtIndexPath:)]) {
+        [self.delegate tableView:self beginMoveCellAtIndexPath:self.selectedCellIndexPath];
+    }
+    
+    // 通过数据源方法判断是否只有一组
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(numberOfSectionsInTableView:)]) {
+        if ([self.dataSource numberOfSectionsInTableView:self] == 1) {
+            self.isOneSection = YES;
+        } else {
+            self.isOneSection = NO;
+        }
+    } else {
+        self.isOneSection = YES;
+    }
+    
     // 隐藏cell，利用截图的以假乱真效果实现拖动
     UITableViewCell *selectedCell = [self cellForRowAtIndexPath:self.selectedCellIndexPath];
     
@@ -84,76 +106,68 @@
     
     selectedCell.hidden = YES;
     
-    // 通过代理方法判断是否只有一组
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(numberOfSectionsInTableView:)]) {
-        if ([self.dataSource numberOfSectionsInTableView:self] == 1) {
-            self.isOneSection = YES;
-        } else {
-            self.isOneSection = NO;
-        }
-    } else {
-        self.isOneSection = YES;
-    }
-    
-    // 获取数据源
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(dataSourceInTableView:)]) {
-        self.datas = [self.dataSource dataSourceInTableView:self];
-    }
-    
     // 开启边缘滚动监听
     [self startMarginScrollTimer];
 }
 
 - (void)longPressChanged:(CGPoint)point {
+    self.tempMovingCell.centerY = point.y;
+    
     NSIndexPath *indexPath = [self indexPathForRowAtPoint:point];
     if (indexPath && ![indexPath isEqual:self.selectedCellIndexPath]) {
         // 交换数据源
         if (self.isOneSection) {
+            // 只有一组，直接交换
             [self.datas exchangeObjectAtIndex:self.selectedCellIndexPath.row withObjectAtIndex:indexPath.row];
             // 移动cell
             [self beginUpdates];
             [self moveRowAtIndexPath:self.selectedCellIndexPath toIndexPath:indexPath];
             [self endUpdates];
+            
+            if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:didMoveCellNewIndexPath:oldIndexPath:)]) {
+                [self.delegate tableView:self didMoveCellNewIndexPath:indexPath oldIndexPath:self.selectedCellIndexPath];
+            }
+            self.selectedCellIndexPath = indexPath;
         } else {
-            // 多组情况 如果实现了代理方法，调用代理方法
-            // 通知代理 交换数据源并移动cell
-            if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:willChangeDataSource:source:destination:)]) {
-                self.datas = [self.delegate tableView:self willChangeDataSource:self.datas source:self.selectedCellIndexPath destination:indexPath];
-                // 交换完之后要重置选中的cell的index
-                self.selectedCellIndexPath = indexPath;
-            } else {
-                // 如果组是数组类型，直接交换，如果是组是自定义model并且没有实现代理方法
-                if ([self.datas[indexPath.section] isKindOfClass:[NSMutableArray class]]) {
+            // 多组情况, 要先交换数据源，再移动cell，否则会crash
+            if ([self.datas[indexPath.section] isKindOfClass:[NSMutableArray class]]) {
+                if (indexPath.section == self.selectedCellIndexPath.section) {
+                    // 同一组 直接交换
+                    NSMutableArray *arrM = self.datas[indexPath.section];
+                    [arrM exchangeObjectAtIndex:self.selectedCellIndexPath.row withObjectAtIndex:indexPath.row];
+                } else {
+                    // 不同一组，需要将选中的数据源从原来的组里删除，再插入到新的组里，不交换
+                    NSMutableArray *sourceSectionM = self.datas[self.selectedCellIndexPath.section];
+                    NSMutableArray *destSectionM = self.datas[indexPath.section];
                     
-                    if (indexPath.section == self.selectedCellIndexPath.section) {
-                        // 同一组 直接交换
-                        NSMutableArray *arrM = self.datas[indexPath.section];
-                        [arrM exchangeObjectAtIndex:self.selectedCellIndexPath.row withObjectAtIndex:indexPath.row];
-                    } else {
-                        // 不同一组，需要将选中的数据源从原来的组里删除，再插入到新的组里，不交换
-                        NSMutableArray *sourceSectionM = self.datas[self.selectedCellIndexPath.section];
-                        NSMutableArray *descSectionM = self.datas[indexPath.section];
-                        id sourceItem = sourceSectionM[self.selectedCellIndexPath.row];
-                        [descSectionM insertObject:sourceItem atIndex:indexPath.row];
-                        [sourceSectionM removeObjectAtIndex:self.selectedCellIndexPath.row];
-                    }
-                    // 移动cell
-                    [self beginUpdates];
-                    [self moveRowAtIndexPath:self.selectedCellIndexPath toIndexPath:indexPath];
-                    [self endUpdates];
+                    id sourceItem = sourceSectionM[self.selectedCellIndexPath.row];
+                    [destSectionM insertObject:sourceItem atIndex:indexPath.row];
+                    [sourceSectionM removeObjectAtIndex:self.selectedCellIndexPath.row];
                 }
+                
+                // 移动cell
+                [self beginUpdates];
+                [self moveRowAtIndexPath:self.selectedCellIndexPath toIndexPath:indexPath];
+                [self endUpdates];
+                
+                if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:didMoveCellNewIndexPath:oldIndexPath:)]) {
+                    [self.delegate tableView:self didMoveCellNewIndexPath:indexPath oldIndexPath:self.selectedCellIndexPath];
+                }
+                self.selectedCellIndexPath = indexPath;
             }
         }
-        if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:didChangeDataSource:)]) {
-            [self.delegate tableView:self didChangeDataSource:self.datas];
+        
+        // 交换之后新的数据源传回去
+        if (self.dataSource && [self.dataSource respondsToSelector:@selector(tableView:newDataSource:)]) {
+            [self.dataSource tableView:self newDataSource:self.datas.copy];
         }
     }
-    self.tempMovingCell.centerY = point.y;
 }
 
 - (void)longPressEnd:(CGPoint)point {
-    NSIndexPath *indexPath = [self indexPathForRowAtPoint:point];
-    NSLog(@"长按手势结束 - %ld", indexPath.row);
+    // 停止边缘滚动监听
+    [self stopMarginScrollTimer];
+    
     // 手势结束 移除截图view  显示真实cell
     UITableViewCell *cell = [self cellForRowAtIndexPath:self.selectedCellIndexPath];
     [UIView animateWithDuration:0.1 animations:^{
@@ -162,10 +176,11 @@
     } completion:^(BOOL finished) {
         [self.tempMovingCell removeFromSuperview];
         cell.hidden = NO;
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:endMoveCellAtIndexPath:)]) {
+            [self.delegate tableView:self endMoveCellAtIndexPath:self.selectedCellIndexPath];
+        }
     }];
-    
-    // 停止边缘滚动监听
-    [self stopMarginScrollTimer];
 }
 
 - (void)startMarginScrollTimer {

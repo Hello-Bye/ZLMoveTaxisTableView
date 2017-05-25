@@ -155,10 +155,10 @@
 		9DA2C46B1ED58C4F00115004 /* ZLMoveTaxisTableView */ = {
 			isa = PBXGroup;
 			children = (
-				9DA2C46C1ED58CC700115004 /* ZLMoveTaxisTableView.h */,
-				9DA2C46D1ED58CC700115004 /* ZLMoveTaxisTableView.m */,
 				9DA2C4751ED59E8200115004 /* UIView+Additions.h */,
 				9DA2C4761ED59E8200115004 /* UIView+Additions.m */,
+				9DA2C46C1ED58CC700115004 /* ZLMoveTaxisTableView.h */,
+				9DA2C46D1ED58CC700115004 /* ZLMoveTaxisTableView.m */,
 			);
 			name = ZLMoveTaxisTableView;
 			path = ../../ZLMoveTaxisTableView;
