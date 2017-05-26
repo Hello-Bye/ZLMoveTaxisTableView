@@ -7,11 +7,16 @@
 //
 
 #import "Model.h"
+#import "NSObject+JSON.h"
 
 @implementation RowModel
 
 @end
 
 @implementation SectionModel
+
++ (NSDictionary *)arrayContainModelClass {
+    return @{@"rowModels" : @"RowModel"};
+}
 
 @end

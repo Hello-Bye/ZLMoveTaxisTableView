@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ZLMoveTaxisTableView.h"
 #import "Model.h"
+#import "NSObject+JSON.h"
 
 @interface ViewController () <ZLMoveTaxisTableViewDataSource, ZLMoveTaxisTableViewDelegate>
 @property (weak, nonatomic) IBOutlet ZLMoveTaxisTableView *tableview;
@@ -24,6 +25,14 @@
     self.tableview.delegate = self;
     self.tableview.rowHeight = 80;
     self.tableview.tableFooterView = [UIView new];
+    
+    SectionModel *section = [SectionModel modelWithJSON:@{@"sectionTitle" : @"section title",
+                                                          @"rowModels"    : @[
+  @{@"rowTitle" : @"row 1"},
+  @{@"rowTitle" : @"row 2"},
+  @{@"rowTitle" : @"row 3"}]}];
+    
+    NSLog(@"%@ \n %@", section.sectionTitle, section.rowModels);
 }
 
 - (NSMutableArray *)dataSource {

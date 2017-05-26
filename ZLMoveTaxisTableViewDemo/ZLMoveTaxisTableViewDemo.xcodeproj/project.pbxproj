@@ -18,6 +18,7 @@
 		9DA2C46E1ED58CC700115004 /* ZLMoveTaxisTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2C46D1ED58CC700115004 /* ZLMoveTaxisTableView.m */; };
 		9DA2C4741ED594CC00115004 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2C4731ED594CC00115004 /* Model.m */; };
 		9DA2C4771ED59E8200115004 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2C4761ED59E8200115004 /* UIView+Additions.m */; };
+		9DB9E3011ED841EC0052E418 /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9E3001ED841EC0052E418 /* NSObject+JSON.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		9DA2C4731ED594CC00115004 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		9DA2C4751ED59E8200115004 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
 		9DA2C4761ED59E8200115004 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
+		9DB9E2FF1ED841EC0052E418 /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
+		9DB9E3001ED841EC0052E418 /* NSObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSON.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				9DA2C43E1ED58B7000115004 /* ViewController.m */,
 				9DA2C4721ED594CC00115004 /* Model.h */,
 				9DA2C4731ED594CC00115004 /* Model.m */,
+				9DB9E2FF1ED841EC0052E418 /* NSObject+JSON.h */,
+				9DB9E3001ED841EC0052E418 /* NSObject+JSON.m */,
 				9DA2C4401ED58B7000115004 /* Main.storyboard */,
 				9DA2C4431ED58B7000115004 /* Assets.xcassets */,
 				9DA2C4451ED58B7000115004 /* LaunchScreen.storyboard */,
@@ -306,6 +311,7 @@
 				9DA2C46E1ED58CC700115004 /* ZLMoveTaxisTableView.m in Sources */,
 				9DA2C4391ED58B7000115004 /* main.m in Sources */,
 				9DA2C4741ED594CC00115004 /* Model.m in Sources */,
+				9DB9E3011ED841EC0052E418 /* NSObject+JSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +551,7 @@
 				9DA2C4631ED58B7000115004 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9DA2C4641ED58B7100115004 /* Build configuration list for PBXNativeTarget "ZLMoveTaxisTableViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +560,7 @@
 				9DA2C4661ED58B7100115004 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9DA2C4671ED58B7100115004 /* Build configuration list for PBXNativeTarget "ZLMoveTaxisTableViewDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -561,6 +569,7 @@
 				9DA2C4691ED58B7100115004 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
