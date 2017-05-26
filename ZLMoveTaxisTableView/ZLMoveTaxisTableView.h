@@ -31,8 +31,15 @@
 - (void)tableView:(ZLMoveTaxisTableView *)tableview endMoveCellAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
+
+
 @interface ZLMoveTaxisTableView : UITableView
 
 @property (nonatomic, weak) id<ZLMoveTaxisTableViewDataSource> dataSource;
 @property (nonatomic, weak) id<ZLMoveTaxisTableViewDelegate> delegate;
+
+/// 距离屏幕边缘多少开始滚动 默认是50
+@property (nonatomic, assign) NSInteger marginScrollDistance;
+/// 边缘滚动最大速度 默认是10（越靠近边缘滚动速度越快，maxScrollSpeed为最大值）
+@property (nonatomic, assign) NSInteger maxScrollSpeed;
 @end

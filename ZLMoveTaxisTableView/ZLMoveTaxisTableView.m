@@ -44,13 +44,17 @@
 - (void)viewInitialization {
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(tableviewLongPressAction:)];
     [self addGestureRecognizer:longPress];
+    
+    // 初始化默认设置
+    self.maxScrollSpeed = 10;
+    self.marginScrollDistance = 50;
 }
 
 #pragma mark 长按手势处理 - 实现长按拖动cell交换位置
 
 - (void)tableviewLongPressAction:(UILongPressGestureRecognizer *)longPress {
     CGPoint point = [longPress locationInView:self];
-    NSLog(@"手指移动到 - %f", point.y);
+//    NSLog(@"手指移动到 - %f", point.y);
     if (longPress.state == UIGestureRecognizerStateBegan) {
         [self longPressBegan:point];
     } else if (longPress.state == UIGestureRecognizerStateChanged) {
@@ -196,15 +200,14 @@
 }
 
 - (void)startMarginScorll {
-    // 边缘滚动 靠近屏幕上下50开始滚动
-    CGFloat marginScrollConst = 50.0;
-    CGFloat topMarginScrollY = self.contentOffset.y + marginScrollConst;
-    CGFloat bottomMarginScrollY = self.contentOffset.y + self.height - marginScrollConst;
+    // 边缘滚动
+    CGFloat topMarginScrollY = self.contentOffset.y + self.marginScrollDistance;
+    CGFloat bottomMarginScrollY = self.contentOffset.y + self.height - self.marginScrollDistance;
     
     CGPoint touchPoint = self.tempMovingCell.center;
     // 这里还需要先判断一下tableview是否已经滚动到最顶部或最底部，
-    if (touchPoint.y <= 0 + marginScrollConst || touchPoint.y >= self.contentSize.height - marginScrollConst) {
-        if (self.contentOffset.y <= 0) {
+    if (touchPoint.y <= 0-self.contentInset.top + self.marginScrollDistance || touchPoint.y >= self.contentSize.height - self.marginScrollDistance) {
+        if (self.contentOffset.y <= 0-self.contentInset.top) {
             return;
         }
         if (self.contentOffset.y >= self.contentSize.height - self.height) {
@@ -212,21 +215,19 @@
         }
     }
     // 顶部需要滚动
-    // 最大滚动速度为10
-    CGFloat maxScrollSpeed = 10;
     if (touchPoint.y < topMarginScrollY) {
         // 变速滚动，越靠近边缘滚动速度越快
-        CGFloat scrollSpeed = (topMarginScrollY - touchPoint.y) / marginScrollConst * maxScrollSpeed;
+        CGFloat scrollSpeed = (topMarginScrollY - touchPoint.y) / self.marginScrollDistance * self.maxScrollSpeed;
         // contentOffset.y 越小越往下滚动  注意： 这里animated不能为YES, 否则tableview不会滚动， 👇底部滚动时同理
         [self setContentOffset:CGPointMake(self.contentOffset.x, self.contentOffset.y -  scrollSpeed) animated:NO];
-        // 这里为了让拖动的cell和tablev同步滚动，所以y值+-数值一定要一样，数值越大，滚动越快， 👇底部滚动时同理
+        // 这里为了让拖动的cell和tablev同步滚动，所以y值 +- 数值一定要一样，数值越大，滚动越快， 👇底部滚动时同理
         [self longPressChanged:CGPointMake(touchPoint.x, touchPoint.y - scrollSpeed)];
     }
     
     // 底部需要滚动
     if (touchPoint.y > bottomMarginScrollY) {
         // 变速滚动，越靠近边缘滚动速度越快
-        CGFloat scrollSpeed = (touchPoint.y - bottomMarginScrollY) / marginScrollConst * maxScrollSpeed;
+        CGFloat scrollSpeed = (touchPoint.y - bottomMarginScrollY) / self.marginScrollDistance * self.maxScrollSpeed;
         [self setContentOffset:CGPointMake(self.contentOffset.x, self.contentOffset.y +  scrollSpeed) animated:NO];
         [self longPressChanged:CGPointMake(touchPoint.x, touchPoint.y + scrollSpeed)];
     }

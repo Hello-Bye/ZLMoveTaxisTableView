@@ -71,7 +71,7 @@
     return @(section).stringValue;
 }
 
-- (NSMutableArray *)dataSourceInTableView:(UITableView *)tableView {
+- (NSArray *)dataSourceInTableView:(UITableView *)tableView {
     return self.dataSource;
 }
 
